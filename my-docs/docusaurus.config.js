@@ -41,6 +41,27 @@ const config = {
         locales: ['en'],
     },
 
+    plugins: [
+        [
+            'docusaurus-plugin-openapi-docs',
+            {
+                id: 'openapi',
+                docsPluginId: 'classic',
+                config: {
+                    petstore: {
+                        specPath: 'openapi/petstore-api.yaml',
+                        outputDir: 'docs/petstore',
+                        sidebarOptions: {
+                            groupPathsBy: 'tag',
+                        },
+                    },
+                },
+            },
+        ],
+    ],
+
+    themes: ['docusaurus-theme-openapi-docs'],
+
     presets: [
         [
             'classic',
@@ -49,6 +70,7 @@ const config = {
                 docs: {
                     sidebarPath: './sidebars.js',
                     routeBasePath: 'docs',
+                    docItemComponent: "@theme/ApiItem",
                     editUrl:
                         'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
                 },
@@ -102,10 +124,17 @@ const config = {
                         label: 'Guides',
                     },
                     { to: '/blog', label: 'Blog', position: 'left' },
+                    { to: '/docs/petstore/swagger-petstore-openapi-3-0', label: 'API', position: 'left' },
                     {
                         href: 'https://github.com/facebook/docusaurus',
                         label: 'GitHub',
                         position: 'right',
+                    },
+                    {
+                        type: 'docSidebar',
+                        sidebarId: 'myApiSidebar',
+                        label: 'Petstore API',
+                        position: 'left',
                     },
                 ],
             },
