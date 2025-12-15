@@ -10,8 +10,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-    title: 'My Site',
-    tagline: 'Dinosaurs are cool',
+    title: 'Technical Documentation Demo',
+    tagline: 'Docusaurus-based documentation with CI/CD and OpenAPI',
     favicon: 'img/favicon.ico',
 
     // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -27,7 +27,7 @@ const config = {
 
     trailingSlash: false,
 
-    onBrokenLinks: 'warn',
+    onBrokenLinks: process.env.CI ? 'throw' : 'warn',
     markdown: {
         hooks: {
             onBrokenMarkdownLinks: 'warn',
@@ -73,9 +73,11 @@ const config = {
                     routeBasePath: 'docs',
                     docItemComponent: "@theme/ApiItem",
                     editUrl:
-                        'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+                        'https://github.com/galditakacsbertold/docusaurus_project/edit/main/my-docs/',
                 },
                 blog: {
+                    blogTitle: 'Documentation Blog',
+                    blogDescription: 'Updates, release notes, and documentation best practices',
                     showReadingTime: true,
                     feedOptions: {
                         type: ['rss', 'atom'],
@@ -83,8 +85,7 @@ const config = {
                     },
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
-                    editUrl:
-                        'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+                    editUrl: 'https://github.com/galditakacsbertold/docusaurus_project/edit/main/my-docs/',
                     // Useful options to enforce blogging best practices
                     onInlineTags: 'warn',
                     onInlineAuthors: 'warn',
@@ -106,7 +107,7 @@ const config = {
                 respectPrefersColorScheme: true,
             },
             navbar: {
-                title: 'My Site',
+                title: 'Docs Demo',
                 logo: {
                     alt: 'My Site Logo',
                     src: 'img/logo.svg',
@@ -124,18 +125,27 @@ const config = {
                         position: 'left',
                         label: 'Guides',
                     },
-                    { to: '/blog', label: 'Blog', position: 'left' },
-                    { to: '/docs/petstore/swagger-petstore-openapi-3-0', label: 'API', position: 'left' },
                     {
-                        href: 'https://github.com/facebook/docusaurus',
-                        label: 'GitHub',
-                        position: 'right',
+                        type: 'docSidebar',
+                        sidebarId: 'faqSidebar',
+                        position: 'left',
+                        label: 'FAQ',
                     },
                     {
                         type: 'docSidebar',
                         sidebarId: 'myApiSidebar',
-                        label: 'Petstore API',
                         position: 'left',
+                        label: 'API Reference',
+                    },
+                    {
+                        to: '/blog',
+                        label: 'Blog',
+                        position: 'left',
+                    },
+                    {
+                        href: 'https://github.com/galditakacsbertold/docusaurus_project',
+                        label: 'GitHub',
+                        position: 'right',
                     },
                 ],
             },
@@ -182,12 +192,18 @@ const config = {
                         ],
                     },
                 ],
-                copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+                copyright:
+                    `© ${new Date().getFullYear()} Documentation Demo. Built with Docusaurus.`,
             },
             prism: {
                 theme: prismThemes.github,
                 darkTheme: prismThemes.dracula,
+                additionalLanguages: ['bash', 'yaml', 'json'],
             },
+            metadata: [
+                { name: 'description', content: 'Technical documentation demo using Docusaurus, OpenAPI, and GitHub Actions' },
+                { name: 'keywords', content: 'documentation, docusaurus, openapi, tech writing, ci/cd' },
+            ],
         }),
 };
 
