@@ -17,3 +17,12 @@ hola:
   label: Hola
   permalink: /hola
   description: Hola tag description
+
+ci-cd:
+  label: CI/CD
+
+github-actions:
+  label: GitHub Actions
+
+documentation:
+  label: Documentation
