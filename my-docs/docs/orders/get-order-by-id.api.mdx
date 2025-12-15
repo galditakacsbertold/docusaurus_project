@@ -1,0 +1,71 @@
+---
+id: get-order-by-id
+title: "Get order by ID"
+description: "Get order by ID"
+sidebar_label: "Get order by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJxtU8Fu2zAM/RXjnTZASNLuVN0KtCiCHToM2ykIBsZmYnW2pEp00cDwvw+03Sxt6oslUXx8j3zqIXTIsBs8popTxtYgUqKWRXd208NTy7AIGl9XMHAeFpGkhkHi584lrmAldWyQy5pbgu0hx6hpWZLzBwzDVi/nGHzmrPHr1Up/FecyuSguKOrjdxiUwQt70SjF2LiSNLp8ynqlvywRdk9cyjsyGzhlmoWkmzSlEDmJm2q76pKhAb9SG5tZ65+r628YThCfXfddq5Ui+2o6iTRVrV2MrKuSfMlNw5VS+A//ljEYSBBqztB91+44wWAfUksCi30TSM7ZXd8sbm4GzXUywo2Tw6Cf+dDPB5ZiHFyxOxbrOxi0LHWoYHFgGSlLDYvleCkv+3nKg8rg9PLmgS41sKhFYrbLJUW3mOksytBCZ+v8Pow6zknl4vbHGgaKMxG6WqwWK3ykecdtKLSeK7nYhzRzbsnTgVv2stBexZClpdEDsycv5b3DPXVV+FWWsSHnFWcU08/SN5OxMwzsm8W3BnXIosG+31Hm36kZBj1+7jgdYTdbgxdKjnaqddOjclnXFeyemswXPE6Wxpefs0m/FjCf85sPyR+1ddR0uoPBXz6evcNhOxjUTDp7pTBFb8uSo5zlXbwgHdbJBA/3vzAM/wB4BFiv
+sidebar_class_name: "get api-method"
+info_path: docs/orders/orders-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get order by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/orders/{orderId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get order by ID
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"orderId","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","required":["id","status"],"properties":{"id":{"type":"string","example":"ord_123"},"status":{"type":"string","enum":["pending","paid","shipped","cancelled"],"example":"pending"},"total":{"type":"number","format":"float","example":29.99}},"title":"Order"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

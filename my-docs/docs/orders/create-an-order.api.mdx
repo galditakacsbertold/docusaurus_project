@@ -1,0 +1,71 @@
+---
+id: create-an-order
+title: "Create an order"
+description: "Create an order"
+sidebar_label: "Create an order"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVMlu3DAM/RWDZ9Wz9DS6pcuhpwRpejIGBcfmjJVaSyQ6ycDwvxeUZ0sz6Cm+WKLJx/eeKA/AuEugK7iNDcUEawWRnnpK/MU3e9BD3ppIDWiOPSmovWNyLJ8whM7UyMa72WPyTmKpbsmirHgfCDT4zSPVDOoCqAL2jJ00C9EHimwo5ZIcPte63m4ogoKtjxYZNGw7jwJGr2hDR6CXq3K1GkcFbFj28DUSMmU595MSGEdJiJSCd2nqtJwv5NVQqqMJouBU2sAHiTSClBi5T++lmuaiPHE0bncpC3xsfi+Wn2E8QVxLd72VToFcM0UCTl1bE8KkBF1NXUeNUDjDHyvEuA8wPdudfR7VVVMLdIXPSQoscesbIeETZ87cgoaZn0ZQQaL4LCtdDdDHDjS0zCHp2QyDKQ8sytpbGNcK5FDuzzP7/UjyNE4TWwXGbX0OX5JOxc3dD1AgDSfCi3JezuFfGd/I+kKImZqKrY+TmsKiwx1ZclyKl6LIYp4Rh5auyn+De3Kd6ZVnoUPjBCerHg7OVOBPl7MVy3QFw7DBRL9iN44Sfuop7kFXawXPGA1uRGC1HhW0hNJWrPxDeyE0jfanB+kr6V0v/d+N+aiOFTd1TYH/m7u+ONW7258PoGBz+H9Y30hNxBe5HvgCGkCBz/rzUOfYAB26XY87yZ0w5fkLx4mRlQ==
+sidebar_class_name: "post api-method"
+info_path: docs/orders/orders-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create an order"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/orders"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create an order
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["total"],"properties":{"total":{"type":"number","format":"float","example":29.99}},"title":"CreateOrderRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Created","content":{"application/json":{"schema":{"type":"object","required":["id","status"],"properties":{"id":{"type":"string","example":"ord_123"},"status":{"type":"string","enum":["pending","paid","shipped","cancelled"],"example":"pending"},"total":{"type":"number","format":"float","example":29.99}},"title":"Order"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
